@@ -11,7 +11,7 @@ function PlayerSelection() {
   const playerSelectionMsg = 'Choose: Rock, Paper, Scissors';
   const playerSelection = prompt(playerSelectionMsg).toLowerCase();
   if (choiceArr.includes(playerSelection)) return playerSelection;
-  else return PlayerSelection();
+  else {console.log('Invalid selection.Try again'); return PlayerSelection();}
 }
 function PlayRound(playerSelection, computerSelection) {
   const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
