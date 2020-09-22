@@ -13,8 +13,8 @@ function PlayerSelection() {
 }
 function PlayRound(playerSelection, computerSelection) {
   const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
-  const computerWinMsg =
-    'Computer chose: ' + computerSelection + ' Computer Wins';
+  const computerWinMsg = 'Computer chose: ' + computerSelection + ' Computer Wins';
+  const drawMsg = 'Computer chose' + computerSelection + 'It's a tie!';
   //PLAYER CHOICE: ROCK
   if (playerSelection === 'rock') {
     if (computerSelection === 'paper') return computerWinMsg;
@@ -30,6 +30,7 @@ function PlayRound(playerSelection, computerSelection) {
     if (computerSelection === 'rock') return computerWinMsg;
     else if (computerSelection === 'paper') return playerWinMsg;
   }
+  else return drawMsg;
 }
 function Game(n) {
   if (n > 0) {
