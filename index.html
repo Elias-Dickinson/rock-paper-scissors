@@ -1,0 +1,41 @@
+<DOCTYPE! html>
+<script>
+function ComputerSelection() {
+  const choiceArr = ['rock', 'paper', 'scissors'];
+  const randomIndex = Math.floor(Math.random() * choiceArr.length);
+  const computerSelection = choiceArr[randomIndex];
+  return computerSelection;
+}
+function PlayerSelection() {
+  const playerSelectionMsg = 'Choose: Rock, Paper, Scissors';
+  const playerSelection = prompt(playerSelectionMsg);
+  return playerSelection;
+}
+function PlayRound(playerSelection, computerSelection) {
+  const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
+  const computerWinMsg =
+    'Computer chose: ' + computerSelection + ' Computer Wins';
+  //PLAYER CHOICE: ROCK
+  if (playerSelection === 'rock') {
+    if (computerSelection === 'paper') return computerWinMsg;
+    else if (computerSelection === 'scissors') return playerWinMsg;
+  }
+  //PLAYER CHOICE: PAPER
+  else if (playerSelection === 'paper') {
+    if (computerSelection === 'scissors') return computerWinMsg;
+    else if (computerSelection === 'rock') return playerWinMsg;
+  }
+  //PLAYER CHOICE: SCISSORS
+  else if (playerSelection === 'scissors') {
+    if (computerSelection === 'rock') return computerWinMsg;
+    else if (computerSelection === 'paper') return playerWinMsg;
+  }
+}
+function Game(n) {
+  if (n > 0) {
+    console.log(PlayRound(PlayerSelection(), ComputerSelection()));
+    return Game(n - 1);
+  } else return 0;
+}
+</script>
+</html>
