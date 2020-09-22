@@ -7,14 +7,17 @@ function ComputerSelection() {
   return computerSelection;
 }
 function PlayerSelection() {
+  const choiceArr = ['rock', 'paper', 'scissors'];
   const playerSelectionMsg = 'Choose: Rock, Paper, Scissors';
-  const playerSelection = prompt(playerSelectionMsg);
-  return playerSelection;
+  const playerSelection = prompt(playerSelectionMsg).toLowerCase();
+  if (choiceArr.includes(playerSelection)) return playerSelection;
+  else return PlayerSelection();
 }
 function PlayRound(playerSelection, computerSelection) {
   const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
-  const computerWinMsg = 'Computer chose: ' + computerSelection + ' Computer Wins';
-  const drawMsg = 'Computer chose; ' + computerSelection + ' It\'s a tie!';
+  const computerWinMsg =
+    'Computer chose: ' + computerSelection + ' Computer Wins';
+  const drawMsg = 'Computer chose; ' + computerSelection + " It's a tie!";
   //PLAYER CHOICE: ROCK
   if (playerSelection === 'rock') {
     if (computerSelection === 'paper') return computerWinMsg;
@@ -40,7 +43,7 @@ function Game(n) {
     return Game(n - 1);
   } else return 0;
 }
-Game(5);
+  Game(5)
 </script>
-  <title>The Odin Project:Rock,Paper,Scissors</title>
+  <title>The Odin Project: Rock,Paper,Scissors</title>
 </html>
