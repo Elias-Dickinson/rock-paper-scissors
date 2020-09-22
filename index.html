@@ -14,23 +14,25 @@ function PlayerSelection() {
 function PlayRound(playerSelection, computerSelection) {
   const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
   const computerWinMsg = 'Computer chose: ' + computerSelection + ' Computer Wins';
-  const drawMsg = 'Computer chose' + computerSelection + 'It\'s a tie!';
+  const drawMsg = 'Computer chose; ' + computerSelection + ' It\'s a tie!';
   //PLAYER CHOICE: ROCK
   if (playerSelection === 'rock') {
     if (computerSelection === 'paper') return computerWinMsg;
     else if (computerSelection === 'scissors') return playerWinMsg;
+    else return drawMsg;
   }
   //PLAYER CHOICE: PAPER
   else if (playerSelection === 'paper') {
     if (computerSelection === 'scissors') return computerWinMsg;
     else if (computerSelection === 'rock') return playerWinMsg;
+    else return drawMsg;
   }
   //PLAYER CHOICE: SCISSORS
   else if (playerSelection === 'scissors') {
     if (computerSelection === 'rock') return computerWinMsg;
     else if (computerSelection === 'paper') return playerWinMsg;
+    else return drawMsg;
   }
-  else return drawMsg;
 }
 function Game(n) {
   if (n > 0) {
