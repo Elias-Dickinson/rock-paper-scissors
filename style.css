@@ -9,7 +9,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-#scoreboard {
+#scoreboard,
+#buttons,
+#reset {
   width: 100%;
 }
 #numWins,
