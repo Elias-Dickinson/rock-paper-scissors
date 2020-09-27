@@ -1,49 +1,18 @@
 <DOCTYPE! html>
-<script>
-function ComputerSelection() {
-  const choiceArr = ['rock', 'paper', 'scissors'];
-  const randomIndex = Math.floor(Math.random() * choiceArr.length);
-  const computerSelection = choiceArr[randomIndex];
-  return computerSelection;
-}
-function PlayerSelection() {
-  const choiceArr = ['rock', 'paper', 'scissors'];
-  const playerSelectionMsg = 'Choose: Rock, Paper, Scissors';
-  const playerSelection = prompt(playerSelectionMsg).toLowerCase();
-  if (choiceArr.includes(playerSelection)) return playerSelection;
-  else {console.log('Invalid selection.Try again'); return PlayerSelection();}
-}
-function PlayRound(playerSelection, computerSelection) {
-  const playerWinMsg = 'Computer chose: ' + computerSelection + ' Player Wins';
-  const computerWinMsg =
-    'Computer chose: ' + computerSelection + ' Computer Wins';
-  const drawMsg = 'Computer chose; ' + computerSelection + " It's a tie!";
-  //PLAYER CHOICE: ROCK
-  if (playerSelection === 'rock') {
-    if (computerSelection === 'paper') return computerWinMsg;
-    else if (computerSelection === 'scissors') return playerWinMsg;
-    else return drawMsg;
-  }
-  //PLAYER CHOICE: PAPER
-  else if (playerSelection === 'paper') {
-    if (computerSelection === 'scissors') return computerWinMsg;
-    else if (computerSelection === 'rock') return playerWinMsg;
-    else return drawMsg;
-  }
-  //PLAYER CHOICE: SCISSORS
-  else if (playerSelection === 'scissors') {
-    if (computerSelection === 'rock') return computerWinMsg;
-    else if (computerSelection === 'paper') return playerWinMsg;
-    else return drawMsg;
-  }
-}
-function Game(n) {
-  if (n > 0) {
-    console.log(PlayRound(PlayerSelection(), ComputerSelection()));
-    return Game(n - 1);
-  } else return 0;
-}
-  Game(5)
-</script>
-  <title>The Odin Project: Rock,Paper,Scissors</title>
-</html>
+<header>
+  <div id="scoreboard">
+    <p id="numWins"></p>
+    <p id="numLosses"></p>
+    <p id="numDraws"></p>
+  </div>
+</header>
+<main>
+  <div id="buttons">
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+  </div>
+  <div id="reset">
+    <button id="resetButton">Play Again?</button>
+  </div>
+</main>
